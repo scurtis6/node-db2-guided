@@ -14,11 +14,12 @@ exports.up = function(knex) {
 
         tbl.string('origin', 256);
 
-        tbl.boolean('alive');
+        // booleans are normally stores as 1 for true and 0 for false
+        tbl.boolean('alive').defaultTo(true);
     });
 };
 
-// how to undo the changes
+// how to undo the changes => knex migrate:rollback
 exports.down = function(knex) {
-  
+  return knex.schema.dropTableIfExists('characters');
 };

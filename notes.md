@@ -16,5 +16,12 @@ Every change to the database schema needs a new migration.
  * `knex init`
  - open knexfile.js and configure the file
  * `knex migrate:make create-characters-table`
+ * `knex migrate:latest`
+
+    # To undo changes
+    - `knex migrate:rollback`
+
+# Add a new table
+- `knex migrate:make add_character_sigil`
 
 
